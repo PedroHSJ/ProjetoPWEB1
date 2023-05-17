@@ -1,0 +1,14 @@
+/* mat-grid-tile {
+    background: lightblue;
+  } */
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+.my-grid-tile {
+    width: 100% !important;
+    padding: 24px !important;
+}
