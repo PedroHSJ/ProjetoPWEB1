@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatMenuModule} from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
 import { MenuComponent } from './menu/menu.component';
-import {RouterLink} from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
-  declarations: [
-    MenuComponent
-  ],
+  declarations: [MenuComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -25,10 +25,10 @@ import {RouterLink} from '@angular/router';
     MatIconModule,
     MatBadgeModule,
     MatMenuModule,
-    RouterLink
+    RouterLink,
+    MatToolbarModule,
+    MatTreeModule,
   ],
-  exports: [
-    MenuComponent
-  ]
+  exports: [MenuComponent],
 })
-export class LayoutModule { }
+export class LayoutModule {}

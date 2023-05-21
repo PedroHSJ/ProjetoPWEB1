@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projeto_pweb": {
+    "primeiro-angular-alunos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projeto_pweb",
+            "outputPath": "dist/primeiro-angular-alunos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "projeto_pweb:build:production"
+              "browserTarget": "primeiro-angular-alunos:build:production"
             },
             "development": {
-              "browserTarget": "projeto_pweb:build:development"
+              "browserTarget": "primeiro-angular-alunos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projeto_pweb:build"
+            "browserTarget": "primeiro-angular-alunos:build"
           }
         },
         "test": {
@@ -88,7 +88,7 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -98,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "0e18cd01-908b-4e9c-83ea-efd8670dd2c3"
+    "analytics": "d799b43a-1d55-42ad-88ad-8f0be27eb04c"
   }
 }

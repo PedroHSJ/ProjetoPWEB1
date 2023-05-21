@@ -1,0 +1,18 @@
+{
+  "usuarios": [
+    {
+      "nomeCompleto": "teste ",
+      "dataNascimento": "2023-05-11T03:00:00.000Z",
+      "cpf": "11125052457",
+      "email": "pedro@gmail.com",
+      "id": 0
+    },
+    {
+      "nomeCompleto": "Pedro Henrique",
+      "dataNascimento": "2023-05-01T03:00:00.000Z",
+      "cpf": "11125052457",
+      "email": "pero@gmail.com",
+      "id": 1
+    }
+  ]
+}
