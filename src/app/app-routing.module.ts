@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListagemUsuariosComponent } from './usuario/listagem-usuarios/listagem-usuarios.component';
 import { CadastrarUsuarioComponent } from './usuario/cadastrar-usuario/cadastrar-usuario.component';
-
+import {CadastrarHorarioComponent} from './horario/cadastrar-horario/cadastrar-horario.component'
 const routes: Routes = [
   {
     path: 'usuario/cadastro',
@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'listagemusuarios',
     component: ListagemUsuariosComponent,
+  },
+  {
+    path: 'horarios/inserir',
+    component: CadastrarHorarioComponent,
   },
 ];
 

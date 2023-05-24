@@ -19,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ListagemUsuariosComponent,
     CadastrarUsuarioComponent,
-    CadastrarUsuarioComponent,
   ],
   imports: [
     CommonModule,

@@ -18,6 +18,8 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HorarioModule } from './horario/horario.module';
+import {MatSelectModule} from '@angular/material/select'; 
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -34,9 +36,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatMenuModule,
     LayoutModule,
     UsuarioModule,
+    HorarioModule,
     HttpClientModule,
     MatDatepickerModule,
     ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

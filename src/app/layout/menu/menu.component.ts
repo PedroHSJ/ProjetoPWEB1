@@ -19,7 +19,7 @@ const TREE_DATA: Node[] = [
   },
   {
     name: 'Horários',
-    children: [{ name: 'Listar' }],
+    children: [{ name: 'Inserir' }],
   },
 ];
 @Component({
