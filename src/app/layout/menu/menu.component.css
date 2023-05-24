@@ -6,8 +6,17 @@
 }
 
 .div-logo-ifpb {
-  height: 100%;
-  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 15 0px;
+}
+.div-logo-ifpb:hover {
+  cursor: pointer;
+}
+.div-img-ifpb img {
+  height: 50px;
 }
 
 .logo-ifpb {

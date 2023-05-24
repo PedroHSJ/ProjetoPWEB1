@@ -11,7 +11,20 @@
           formControlName="nomeCompleto"
         />
       </mat-form-field>
+
       <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Data nascimento</mat-label>
+        <input
+          type="date"
+          [(ngModel)]="usuarioDeManutencao.dataNascimento"
+          matInput
+          placeholder="Selecione uma data"
+          [max]="maxDate"
+          formControlName="dataNascimento"
+        />
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="fill" class="form-field">
         <mat-label>Data nascimento</mat-label>
 
         <input
@@ -24,7 +37,7 @@
         />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+      </mat-form-field> -->
 
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>CPF</mat-label>

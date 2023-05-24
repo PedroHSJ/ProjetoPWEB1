@@ -1,3 +1,4 @@
 export interface IHorario {
-    valor: any;
+  horario: any;
+  data: any;
 }
