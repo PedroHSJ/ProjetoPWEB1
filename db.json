@@ -1,10 +1,10 @@
 {
   "usuarios": [
     {
-      "nomeCompleto": "Pedro",
-      "dataNascimento": "2023-05-11T03:00:00.000Z",
+      "nomeCompleto": "Pedro wert",
+      "dataNascimento": "2023-05-11",
       "cpf": "11125052457",
-      "email": "pedro@gmail.com",
+      "email": "pedro@gmail.coe",
       "id": 0,
       "horarios": [
         {
@@ -20,6 +20,27 @@
           "horario": "10:00"
         }
       ]
+    },
+    {
+      "nomeCompleto": "dada",
+      "dataNascimento": "0001-02-21",
+      "cpf": "12121111221",
+      "email": "samuel@gmail.com",
+      "id": 1
+    },
+    {
+      "nomeCompleto": "saa asa",
+      "dataNascimento": "0121-02-21",
+      "cpf": "12111112122",
+      "email": "e@gmail.com",
+      "id": 2
+    },
+    {
+      "nomeCompleto": "samuel dere",
+      "dataNascimento": "0001-03-31",
+      "cpf": "13133131189",
+      "email": "sam@gmail.com",
+      "id": 3
     }
   ]
 }

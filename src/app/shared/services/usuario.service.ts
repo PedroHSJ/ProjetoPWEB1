@@ -19,6 +19,7 @@ export class UsuarioService {
   }
 
   atualizar(usuario: IUsuario): Observable<IUsuario> {
+    console.log('oi')
     return this.httpClient.put<IUsuario>(
       `${this.URL_USUARIOS}/${usuario.id}`,
       usuario

@@ -29,10 +29,9 @@ export class CadastrarUsuarioComponent implements OnInit {
       this.usuarioService.pesquisarPorId(+idParaEdicao).subscribe((usuario) => {
         this.usuarioDeManutencao = usuario;
       });
-
-      if (this.rotaAtual.snapshot.paramMap.get("id")) {
-        this.estahCadastrando = false;
-      }
+      this.IdUsuarioEditar = idParaEdicao;
+      this.estahCadastrando = false;
+      
     }
   }
 
@@ -57,6 +56,7 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   manter(): void {
+    console.log(this.IdUsuarioEditar);
     if (this.estahCadastrando && this.usuarioDeManutencao) {
       this.usuarioDeManutencao.nomeCompleto =
         this.usuarioDeManutencao.nomeCompleto?.trim();
@@ -64,7 +64,7 @@ export class CadastrarUsuarioComponent implements OnInit {
         .inserir(this.usuarioDeManutencao)
         .subscribe((usuario) => {
           //this.usuarios.push(usuario);
-          this.roteador.navigate(["listagemusuarios"]);
+          this.roteador.navigate([""]);
         });
     }
     //this.nomeBotaoManutencao = 'Cadastrar';
@@ -72,12 +72,13 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   atualizar() {
+    console.log('oi');
     if (this.usuarioDeManutencao) {
-      // this.usuarioService
-      //   .atualizar(this.usuarioDeManutencao)
-      //   .subscribe((usuario) => {
-      //     this.roteador.navigate(['listagemusuarios']);
-      //   });
+      this.usuarioService
+        .atualizar(this.usuarioDeManutencao)
+        .subscribe((usuario) => {
+          this.roteador.navigate(['']);
+        });
     }
   }
 }

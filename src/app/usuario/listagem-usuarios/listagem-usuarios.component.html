@@ -12,7 +12,7 @@
     </mat-card-header>
     <mat-card-content>
       <h4>Aulas</h4>
-      <div *ngFor="for; let horario; of: usuario.horarios">
+      <div *ngFor="let horario of usuario.horarios">
         <span>
           {{ horario.data | date : "dd/MM/yyyy" }} - {{ horario.horario }}
         </span>
