@@ -72,7 +72,6 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   atualizar() {
-    console.log('oi');
     if (this.usuarioDeManutencao) {
       this.usuarioService
         .atualizar(this.usuarioDeManutencao)
