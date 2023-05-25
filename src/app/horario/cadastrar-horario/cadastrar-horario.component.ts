@@ -30,7 +30,6 @@ export class CadastrarHorarioComponent {
   }
 
   print() {
-    console.log(this.usuario);
     const userSelected = this.usuarios.filter((usuario) => {
       return usuario.id === this.usuario.id;
     })[0];
