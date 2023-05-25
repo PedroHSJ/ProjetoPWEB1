@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IUsuario } from '../interfaces/IUsuario';
+import { IAluno } from '../interfaces/IAluno';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService {
   URL_USUARIOS = 'http://localhost:3000/usuarios';
+  URL_ALUNOS = 'http://localhost:3000/alunos';
   constructor(private httpClient: HttpClient) {}
 
   listar(): Observable<IUsuario[]> {
@@ -19,6 +21,7 @@ export class UsuarioService {
   }
 
   atualizar(usuario: IUsuario): Observable<IUsuario> {
+    console.log('oi')
     return this.httpClient.put<IUsuario>(
       `${this.URL_USUARIOS}/${usuario.id}`,
       usuario
@@ -31,5 +34,27 @@ export class UsuarioService {
 
   pesquisarPorId(id: number): Observable<IUsuario> {
     return this.httpClient.get<IUsuario>(`${this.URL_USUARIOS}/${id}`);
+  }
+  listarAluno(): Observable<IAluno[]> {
+    return this.httpClient.get<IAluno[]>(this.URL_ALUNOS);
+  }
+
+  inserirAluno(aluno: IAluno): Observable<IAluno> {
+    return this.httpClient.post<IAluno>(this.URL_ALUNOS, aluno);
+  }
+
+  atualizarAluno(aluno: IAluno): Observable<IAluno> {
+    return this.httpClient.put<IAluno>(
+      `${this.URL_ALUNOS}/${aluno.id}`,
+      aluno
+    );
+  }
+
+  apagarAluno(id: number): Observable<IAluno> {
+    return this.httpClient.delete<IAluno>(`${this.URL_ALUNOS}/${id}`);
+  }
+
+  pesquisarPorIdAluno(id: number): Observable<IAluno> {
+    return this.httpClient.get<IAluno>(`${this.URL_ALUNOS}/${id}`);
   }
 }

@@ -10,7 +10,10 @@ import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 export class ListagemUsuariosComponent implements OnInit {
   usuarios: IUsuario[] = [];
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(
+    private usuarioService: UsuarioService, 
+
+    ) {}
 
   ngOnInit(): void {
     this.usuarioService.listar().subscribe((usuariosRetornados) => {
@@ -40,6 +43,7 @@ export class ListagemUsuariosComponent implements OnInit {
   }
 
   atualizar(usuario: IUsuario) {
+    console.log(usuario);
     if (usuario != null) {
       this.usuarioService.atualizar(usuario).subscribe((usuario) => {
         this.usuarioService
