@@ -34,14 +34,8 @@
       "cpf": "12111112122",
       "email": "e@gmail.com",
       "id": 2
-    },
-    {
-      "nomeCompleto": "sa de",
-      "dataNascimento": "0001-03-31",
-      "cpf": "12121111221",
-      "email": "13@gmail.com",
-      "id": 4
     }
+   
   ],
   "alunos": [
     {
