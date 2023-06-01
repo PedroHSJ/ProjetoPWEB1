@@ -23,6 +23,9 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { CalendarioComponent } from "./home/calendario/calendario.component";
 import { HomeModule } from "./home/home.module";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AlertService } from './shared/services/alert.service';
+import {IMensagem} from './shared/interfaces/IMensagem'
 
 @NgModule({
   declarations: [AppComponent],
@@ -50,8 +53,13 @@ import { HomeModule } from "./home/home.module";
       useFactory: adapterFactory,
     }),
     HomeModule,
+    MatSnackBarModule
+    ],
+  providers: [{
+    provide: IMensagem,
+    useClass: AlertService
+  }
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

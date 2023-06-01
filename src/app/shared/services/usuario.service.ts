@@ -54,7 +54,7 @@ export class UsuarioService {
     return this.httpClient.get<IAluno>(`${this.URL_ALUNOS}/${id}`);
   }
 
-  pesquisarPorCpf(cpf: string | undefined): Observable<IUsuario> {
-    return this.httpClient.get<IUsuario>(`${this.URL_USUARIOS}?cpf=${cpf}`);
+  pesquisarPorCpf(cpf: string | undefined): Observable<IUsuario[]> {
+    return this.httpClient.get<IUsuario[]>(`${this.URL_USUARIOS}?cpf=${cpf}`);
   }
 }
