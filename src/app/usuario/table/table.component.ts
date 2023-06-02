@@ -31,16 +31,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
                         styleUrls: ['./table.component.css']
                       })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['nomeCompleto'];
+  displayedColumns: string[] = ['nomeCompleto', 'cpf', 'email'];
   usuarios: IUsuario[] = [];
-  dataSource = this.usuarios;
+  dataSource: IUsuario[] = [];
   constructor(private usuarioService: UsuarioService){
   }
 
   ngOnInit(){
     this.usuarioService.listar().subscribe((usuarios) => {
       console.log(usuarios);
-      this.usuarios = usuarios;
+      this.dataSource = usuarios;
+      console.log(this.dataSource);
     });
   }
 }
