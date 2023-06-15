@@ -1,22 +1,29 @@
 import { Component, OnInit } from "@angular/core";
 import { UsuarioService } from "../../shared/services/usuario.service";
 import { IUsuario } from "src/app/shared/interfaces/IUsuario";
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: "app-listagem-usuarios",
   templateUrl: "./listagem-usuarios.component.html",
   styleUrls: ["./listagem-usuarios.component.css"],
 })
-export class ListagemUsuariosComponent implements OnInit {
-  usuarios: IUsuario[] = [];
+export class ListagemUsuariosComponent {
+  // usuarios: IUsuario[] = [];
+  usuarios: Observable<IUsuario[]>;
+  quantidadeDeUsuarios: Observable<number>
 
-  constructor(private usuarioService: UsuarioService) {}
-
-  ngOnInit(): void {
-    this.usuarioService.listar().subscribe((usuariosRetornados) => {
-      this.usuarios = usuariosRetornados;
-    });
+  constructor(private usuarioService: UsuarioService) {
+    this.usuarios = usuarioService.listar();
+    this.quantidadeDeUsuarios = 
+    this.usuarios.pipe(map(usuarios => usuarios.length))
   }
+
+  // ngOnInit(): void {
+  //   this.usuarioService.listar().subscribe((usuariosRetornado: IUsuario) => {
+  //     this.usuarios = usuariosRetornados;
+  //   });
+  // }
 
   excluir(usuarioARemover: IUsuario): void {
     if (usuarioARemover.id) {

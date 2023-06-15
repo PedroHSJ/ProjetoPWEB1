@@ -26,6 +26,7 @@ import { HomeModule } from "./home/home.module";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlertService } from './shared/services/alert.service';
 import {IMensagem} from './shared/interfaces/IMensagem'
+import { FirebaseModule } from './firebase/firebase.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -53,7 +54,8 @@ import {IMensagem} from './shared/interfaces/IMensagem'
       useFactory: adapterFactory,
     }),
     HomeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FirebaseModule
     ],
   providers: [{
     provide: IMensagem,
