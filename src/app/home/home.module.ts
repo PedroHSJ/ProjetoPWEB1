@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { InitialComponent } from './initial/initial.component';
 
 @NgModule({
   declarations: [
-    CalendarioComponent
+    CalendarioComponent,
+    InitialComponent
   ],
   imports: [
     CommonModule,
@@ -14,6 +16,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
-  ]
+  ],
+  exports: [InitialComponent]
 })
 export class HomeModule { }

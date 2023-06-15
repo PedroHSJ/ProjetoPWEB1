@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../shared/services/usuario.service';
-import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
+import { Component, OnInit } from "@angular/core";
+import { UsuarioService } from "../../shared/services/usuario.service";
+import { IUsuario } from "src/app/shared/interfaces/IUsuario";
 
 @Component({
-  selector: 'app-listagem-usuarios',
-  templateUrl: './listagem-usuarios.component.html',
-  styleUrls: ['./listagem-usuarios.component.css'],
+  selector: "app-listagem-usuarios",
+  templateUrl: "./listagem-usuarios.component.html",
+  styleUrls: ["./listagem-usuarios.component.css"],
 })
 export class ListagemUsuariosComponent implements OnInit {
   usuarios: IUsuario[] = [];

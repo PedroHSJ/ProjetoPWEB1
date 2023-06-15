@@ -14,8 +14,9 @@ import { CadastrarUsuarioComponent } from "./cadastrar-usuario/cadastrar-usuario
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { AlunoComponent } from './aluno/aluno.component';
 @NgModule({
-  declarations: [ListagemUsuariosComponent, CadastrarUsuarioComponent],
+  declarations: [ListagemUsuariosComponent, CadastrarUsuarioComponent, AlunoComponent],
   imports: [
     CommonModule,
     MatButtonModule,
