@@ -1,5 +1,5 @@
 <div class='Listagem' fxLayout="row wrap" fxLayout.lt-sm="column">
-  <mat-card class="card-usuario" *ngFor="let usuario of usuarios">
+  <mat-card class="card-usuario" *ngFor="let usuario of usuarios | async">
     <mat-card-header>
       <mat-card-title>{{ usuario.nomeCompleto | titlecase }}</mat-card-title>
       <mat-card-subtitle

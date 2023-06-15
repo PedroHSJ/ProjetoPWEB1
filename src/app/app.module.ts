@@ -23,10 +23,11 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { CalendarioComponent } from "./home/calendario/calendario.component";
 import { HomeModule } from "./home/home.module";
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { AlertService } from './shared/services/alert.service';
-import {IMensagem} from './shared/interfaces/IMensagem'
-import { FirebaseModule } from './firebase/firebase.module';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { AlertService } from "./shared/services/alert.service";
+import { IMensagem } from "./shared/interfaces/IMensagem";
+import { FirebaseModule } from "./firebase/firebase.module";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [AppComponent],
@@ -55,12 +56,14 @@ import { FirebaseModule } from './firebase/firebase.module';
     }),
     HomeModule,
     MatSnackBarModule,
-    FirebaseModule
-    ],
-  providers: [{
-    provide: IMensagem,
-    useClass: AlertService
-  }
+    FirebaseModule,
+    MatSlideToggleModule,
+  ],
+  providers: [
+    {
+      provide: IMensagem,
+      useClass: AlertService,
+    },
   ],
   bootstrap: [AppComponent],
 })

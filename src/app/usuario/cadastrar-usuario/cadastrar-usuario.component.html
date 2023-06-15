@@ -12,7 +12,7 @@
         />
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="form-field">
+      <!-- <mat-form-field appearance="fill" class="form-field">
         <mat-label>Data nascimento</mat-label>
         <input
           type="date"
@@ -22,7 +22,7 @@
           [max]="maxDate"
           formControlName="dataNascimento"
         />
-      </mat-form-field>
+      </mat-form-field> -->
 
       <!-- <mat-form-field appearance="fill" class="form-field">
         <mat-label>Data nascimento</mat-label>
@@ -47,6 +47,17 @@
           [(ngModel)]="usuarioDeManutencao.cpf"
           placeholder="Digite o CPF"
           formControlName="cpf"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Idade</mat-label>
+
+        <input
+          matInput
+          [(ngModel)]="usuarioDeManutencao.idade"
+          placeholder="Digite a idade"
+          formControlName="idade"
         />
       </mat-form-field>
 

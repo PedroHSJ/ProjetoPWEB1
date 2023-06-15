@@ -14,13 +14,17 @@ import { CadastrarUsuarioComponent } from "./cadastrar-usuario/cadastrar-usuario
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { TableComponent } from './table/table.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { TableComponent } from "./table/table.component";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @NgModule({
-  declarations: [ListagemUsuariosComponent, CadastrarUsuarioComponent, TableComponent],
+  declarations: [
+    ListagemUsuariosComponent,
+    CadastrarUsuarioComponent,
+    TableComponent,
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -36,7 +40,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule,
   ],
   exports: [ListagemUsuariosComponent, CadastrarUsuarioComponent],
 })

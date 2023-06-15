@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { IHorario } from "src/app/shared/interfaces/IHorario";
 import { IUsuario } from "src/app/shared/interfaces/IUsuario";
+import { AlertService } from "src/app/shared/services/alert.service";
+import { UsuarioFirestoreService } from "src/app/shared/services/usuario-firestore.service";
 import { UsuarioService } from "src/app/shared/services/usuario.service";
 
 @Component({
@@ -15,8 +17,9 @@ export class CadastrarHorarioComponent {
   usuario: IUsuario;
 
   constructor(
-    private usuarioService: UsuarioService,
-    private roteador: Router
+    private usuarioService: UsuarioFirestoreService,
+    private roteador: Router,
+    private alertService: AlertService
   ) {
     this.horario = {} as IHorario;
     this.usuarios = [] as IUsuario[];
@@ -29,7 +32,7 @@ export class CadastrarHorarioComponent {
     });
   }
 
-  print() {
+  inserir() {
     const userSelected = this.usuarios.filter((usuario) => {
       return usuario.id === this.usuario.id;
     })[0];
@@ -42,10 +45,21 @@ export class CadastrarHorarioComponent {
           );
         }
       );
-      if (!valorExistente) userSelected.horarios?.push(this.horario);
+      console.log(userSelected.horarios);
+      console.log(!!valorExistente);
+
+      if (!!valorExistente) {
+        this.alertService.warningAlert("Horário já cadastrado");
+        return;
+      }
     }
-    this.usuarioService.atualizar(userSelected).subscribe((usuario) => {
-      this.roteador.navigate(["listagemusuarios"]);
+    if (userSelected.horarios) {
+      userSelected.horarios.push(this.horario);
+    } else {
+      userSelected.horarios = [this.horario];
+    }
+    this.usuarioService.inserirHorario(userSelected).subscribe((usuario) => {
+      this.roteador.navigate([""]);
     });
   }
 }
