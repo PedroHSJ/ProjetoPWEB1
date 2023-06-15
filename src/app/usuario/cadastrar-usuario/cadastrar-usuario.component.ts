@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ɵConsole } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { IUsuario } from "src/app/shared/interfaces/IUsuario";
 import { UsuarioService } from "src/app/shared/services/usuario.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @Component({
   selector: "app-cadastrar-usuario",
@@ -16,11 +17,12 @@ export class CadastrarUsuarioComponent implements OnInit {
   IdUsuarioEditar: any = "";
   maxDate: Date = new Date();
   formCadastro: FormGroup = {} as FormGroup;
-
+  
   constructor(
     private rotaAtual: ActivatedRoute,
     private roteador: Router,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private alertService: AlertService
   ) {
     this.usuarioDeManutencao = {} as IUsuario;
     const idParaEdicao = this.rotaAtual.snapshot.paramMap.get("id");
@@ -62,17 +64,25 @@ export class CadastrarUsuarioComponent implements OnInit {
 
       this.usuarioService
         .pesquisarPorCpf(this.usuarioDeManutencao.cpf)
-        .subscribe((usuario) => {
-          if (!usuario) {
+        .subscribe((usuario: IUsuario[]) => {
+          console.log(usuario);
+
+          usuario.length
+
+          if (!usuario.length) {
             this.usuarioService
               .inserir(this.usuarioDeManutencao)
-              .subscribe((usuario) => {
+              .subscribe((usuario: IUsuario) => {
                 //this.usuarios.push(usuario);
+                this.alertService.successAlert("Usuário cadastrado com sucesso!");
                 this.roteador.navigate([""]);
               });
           } else {
-            alert("CPF já cadastrado");
+            this.alertService.warningAlert("CPF já cadastrado.");
+
           }
+
+
         });
     }
     //this.nomeBotaoManutencao = 'Cadastrar';

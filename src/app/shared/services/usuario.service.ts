@@ -17,6 +17,7 @@ export class UsuarioService {
   }
 
   inserir(usuario: IUsuario): Observable<IUsuario> {
+    usuario.cpf = usuario.cpf?.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
     return this.httpClient.post<IUsuario>(this.URL_USUARIOS, usuario);
   }
 
@@ -54,7 +55,7 @@ export class UsuarioService {
     return this.httpClient.get<IAluno>(`${this.URL_ALUNOS}/${id}`);
   }
 
-  pesquisarPorCpf(cpf: string | undefined): Observable<IUsuario> {
-    return this.httpClient.get<IUsuario>(`${this.URL_USUARIOS}?cpf=${cpf}`);
+  pesquisarPorCpf(cpf: string | undefined): Observable<IUsuario[]> {
+    return this.httpClient.get<IUsuario[]>(`${this.URL_USUARIOS}?cpf=${cpf}`);
   }
 }

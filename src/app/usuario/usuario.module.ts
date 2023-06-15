@@ -14,9 +14,13 @@ import { CadastrarUsuarioComponent } from "./cadastrar-usuario/cadastrar-usuario
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { AlunoComponent } from './aluno/aluno.component';
+import { TableComponent } from './table/table.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 @NgModule({
-  declarations: [ListagemUsuariosComponent, CadastrarUsuarioComponent, AlunoComponent],
+  declarations: [ListagemUsuariosComponent, CadastrarUsuarioComponent, TableComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -31,6 +35,8 @@ import { AlunoComponent } from './aluno/aluno.component';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [ListagemUsuariosComponent, CadastrarUsuarioComponent],
 })

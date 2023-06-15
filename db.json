@@ -36,11 +36,18 @@
       "id": 2
     },
     {
-      "nomeCompleto": "samuek fe",
-      "dataNascimento": "0001-02-12",
-      "cpf": "12212112121",
-      "email": "samuel@gmail.com",
+      "nomeCompleto": "Fernando",
+      "dataNascimento": "2001-07-25",
+      "cpf": "12344022500",
+      "email": "teste@gmail.com",
       "id": 3
+    },
+    {
+      "nomeCompleto": "Samuel dois",
+      "dataNascimento": "2001-04-25",
+      "cpf": "11125052458",
+      "email": "teste@gmail.com",
+      "id": 4
     }
   ],
   "alunos": [

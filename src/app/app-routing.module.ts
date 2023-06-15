@@ -4,6 +4,7 @@ import { ListagemUsuariosComponent } from "./usuario/listagem-usuarios/listagem-
 import { CadastrarUsuarioComponent } from "./usuario/cadastrar-usuario/cadastrar-usuario.component";
 import { CadastrarHorarioComponent } from "./horario/cadastrar-horario/cadastrar-horario.component";
 import { CalendarioComponent } from "./home/calendario/calendario.component";
+import { TableComponent } from './usuario/table/table.component';
 const routes: Routes = [
   {
     path: "usuario/cadastro",
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: ListagemUsuariosComponent,
+    component: TableComponent,
   },
   {
     path: "horarios/inserir",
